@@ -103,7 +103,7 @@ class SearchBox extends React.PureComponent {
    * @public
    */
   getPlaces() {
-    return this.state[SEARCH_BOX].getPlaces()
+    return this.state[SEARCH_BOX].getPlace()
   }
 }
 
@@ -112,7 +112,7 @@ export const StandaloneSearchBox = SearchBox
 export default StandaloneSearchBox
 
 const eventMap = {
-  onPlacesChanged: "places_changed",
+  onPlacesChanged: "place_changed",
 }
 
 const updaterMap = {
