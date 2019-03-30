@@ -54,11 +54,13 @@ class SearchBox extends React.PureComponent {
       `Did you include "libraries=places" in the URL?`
     )
     const element = ReactDOM.findDOMNode(this)
+    const options = this.props.options || {}
     /*
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#SearchBox
      */
-    const searchBox = new google.maps.places.SearchBox(
-      element.querySelector("input") || element
+    const searchBox = new google.maps.places.Autocomplete(
+      element.querySelector("input") || element,
+      options
     )
     construct(SearchBox.propTypes, updaterMap, this.props, searchBox)
 

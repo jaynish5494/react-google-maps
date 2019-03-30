@@ -123,8 +123,10 @@ export class SearchBox extends React.PureComponent {
     /*
      * @see https://developers.google.com/maps/documentation/javascript/3.exp/reference#SearchBox
      */
-    const searchBox = new google.maps.places.SearchBox(
-      this.containerElement.querySelector("input")
+    const options = this.props.options || {}
+    const searchBox = new google.maps.places.Autocomplete(
+      this.containerElement.querySelector("input"),
+      options
     )
     construct(SearchBox.propTypes, updaterMap, this.props, searchBox)
     this.setState({
